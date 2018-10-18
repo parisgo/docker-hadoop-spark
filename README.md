@@ -59,5 +59,5 @@
     docker-compose exec hadoop-spark-master hadoop jar /code/tests/mapreduce/hadoop-mapreduce-examples-2.9.1.jar wordcount /mapreduce/log /mapreduce_out
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture11.png)
 
-    hadoop jar /code/tests/mapreduce/hadoop-mapreduce-examples-2.9.1.jar wordcount /mapreduce/log /mapreduce_out
+    docker-compose exec hadoop-spark-master hadoop fs -cat /mapreduce_out/part-r-00000
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture12.png)
