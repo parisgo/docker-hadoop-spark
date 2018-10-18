@@ -51,7 +51,7 @@
 [http://localhost:8080](http://localhost:8080)
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture10.png)
 
-10: Test wordcount
+10: Test wordcount by Hadoop mapreduce
 
     docker-compose exec hadoop-spark-master ls -l /code/tests/mapreduce/  
     docker-compose exec hadoop-spark-master hadoop fs -mkdir /mapreduce  
@@ -61,3 +61,11 @@
 
     docker-compose exec hadoop-spark-master hadoop fs -cat /mapreduce_out/part-r-00000
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture12.png)
+
+11: Create project spark and upload jar to server 
+
+![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture13.png)
+
+12: Test wordcount by Spark   
+
+![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture14.png)
