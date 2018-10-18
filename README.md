@@ -4,7 +4,7 @@
     docker build -t myos6 .
     docker build -t myos6-hadoop-spark .
 
-2: Check all images
+2: check all images
 
     docker images
 
@@ -35,7 +35,6 @@
 
     docker-compose exec hadoop-spark-master start-all.sh
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture06.png)
-
 8: Check service status
 
     docker-compose exec hadoop-spark-master jps
@@ -43,10 +42,21 @@
 
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture07.png)
     
-9: We can check also all services by web    
+9: We can check also all services by web 
 [http://localhost:50070](http://localhost:50070)
-![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture08.png)   
+![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture08.png)
 [http://localhost:8088](http://localhost:8088)
-![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture09.png)   
+![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture09.png)
 [http://localhost:8080](http://localhost:8080)
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture10.png)
+
+10: Test wordcount
+
+    docker-compose exec hadoop-spark-master ls -l /code/tests/mapreduce/  
+    docker-compose exec hadoop-spark-master hadoop fs -mkdir /mapreduce  
+    docker-compose exec hadoop-spark-master hadoop fs -put /code/tests/mapreduce/log /mapreduce/  
+    docker-compose exec hadoop-spark-master hadoop jar /code/tests/mapreduce/hadoop-mapreduce-examples-2.9.1.jar wordcount /mapreduce/log /mapreduce_out
+![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture11.png)
+
+    hadoop jar /code/tests/mapreduce/hadoop-mapreduce-examples-2.9.1.jar wordcount /mapreduce/log /mapreduce_out
+![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture12.png)
