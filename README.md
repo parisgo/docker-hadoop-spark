@@ -4,7 +4,7 @@
     docker build -t myos6 .
     docker build -t myos6-hadoop-spark .
 
-2: check all images
+2: Check all images
 
     docker images
 
@@ -35,6 +35,7 @@
 
     docker-compose exec hadoop-spark-master start-all.sh
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture06.png)
+
 8: Check service status
 
     docker-compose exec hadoop-spark-master jps
@@ -42,7 +43,7 @@
 
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture07.png)
     
-9: We can check also all services by web 
+9: We can check also all services by web   
 [http://localhost:50070](http://localhost:50070)
 ![enter image description here](https://raw.githubusercontent.com/parisgo/docker-hadoop-spark/master/docs/images/Capture08.png)
 [http://localhost:8088](http://localhost:8088)
